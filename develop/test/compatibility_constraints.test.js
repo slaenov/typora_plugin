@@ -4,7 +4,7 @@ const path = require("node:path")
 const test = require("node:test")
 
 const repoRoot = path.resolve(__dirname, "../..")
-const pluginRoots = ["repository", "html_editor", "diagram_enhance"]
+const pluginRoots = ["repository", "html_editor", "diagram_enhance", "sessions"]
   .map(name => path.join(repoRoot, "plugin", name))
 const ignoredDirectories = new Set(["lib", "resource"])
 
@@ -30,12 +30,12 @@ const findViolations = pattern => sources.flatMap(source => [...source.content.m
   `${source.relativePath}:${lineNumberAt(source.content, match.index)}:${match[0]}`
 )))
 
-test("the three new plugin UIs avoid native select, option, and button elements", () => {
+test("the guarded plugin UIs avoid native select, option, and button elements", () => {
   const pattern = /<\/?(?:select|option|button)\b|createElement\(\s*["'](?:select|option|button)["']/gi
   assert.deepEqual(findViolations(pattern), [])
 })
 
-test("the three new plugins stay within the Chrome 84 compatibility boundary", () => {
+test("the guarded plugins stay within the Chrome 84 compatibility boundary", () => {
   const forbidden = [
     /\bcounter-set\s*:/g,
     /\bcolor-mix\s*\(/g,
