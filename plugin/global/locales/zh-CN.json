@@ -200,6 +200,26 @@
     "$option.TAB_DETACHMENT.resistant": "阻尼分离",
     "$option.TAB_DETACHMENT.lockVertical": "锁定垂直移动"
   },
+  "sessions": {
+    "pluginName": "会话",
+    "act.new_untitled": "新建未命名缓冲区",
+    "modal.saveChanges": "是否保存对 {{name}} 的更改？",
+    "modal.saveDetail": "如果不保存，更改将会丢失。",
+    "modal.save": "保存",
+    "modal.dontSave": "不保存",
+    "modal.cancel": "取消",
+    "modal.saveDialogTitle": "保存文档",
+    "$label.STASH_NEW_UNSAVED_FILES": "暂存未命名文档",
+    "$label.STASH_UNSAVED_FILE_CHANGES": "暂存未保存的文件修改",
+    "$label.STASH_SYNC_INTERVAL": "暂存同步间隔（秒）",
+    "$label.UNTITLED_NAME_PREFIX": "未命名标签前缀",
+    "$label.NEW_UNTITLED_HOTKEY": "新建未命名缓冲区",
+    "$label.DEBUG": "详细日志",
+    "$title.stash": "暂存",
+    "$title.appearance": "外观",
+    "$title.hotkeys": "快捷键",
+    "$title.development": "开发"
+  },
   "search_multi": {
     "pluginName": "多元文件搜索",
     "grammar": "搜索语法",

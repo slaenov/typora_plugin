@@ -148,6 +148,35 @@ COPY_PATH_HOTKEY = []
 CONTEXT_MENU = ["closeTab", "closeOtherTabs", "closeLeftTabs", "closeRightTabs", "sortTabs", "copyPath", "showInFinder", "openInNewWindow"]
 
 
+[sessions]
+# =========== [ Basic ] ===========
+# Kate-style sessions: untitled buffers survive a restart without ever creating a file
+ENABLE = true
+NAME = ""
+
+# =========== [ Stash ] ===========
+# Stash new unsaved files: keep the body of documents that have no path yet
+STASH_NEW_UNSAVED_FILES = true
+
+# Stash unsaved file changes: keep unsaved edits of documents that do have a path.
+# Off by default: Typora autosaves such documents anyway
+STASH_UNSAVED_FILE_CHANGES = false
+
+# Stash sync interval in seconds: how often live buffers are written to the stash
+STASH_SYNC_INTERVAL = 15
+
+# =========== [ Appearance ] ===========
+# Name prefix of untitled tabs
+UNTITLED_NAME_PREFIX = "Untitled-"
+
+# =========== [ Hotkeys ] ===========
+# New untitled buffer
+NEW_UNTITLED_HOTKEY = "ctrl+alt+n"
+
+# =========== [ Development ] ===========
+# Verbose logging
+DEBUG = false
+
 [search_multi]
 # =========== [ Basic ] ===========
 ENABLE = true

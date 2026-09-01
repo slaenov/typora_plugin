@@ -183,6 +183,25 @@ const schema_window_tab = () => [
   FRAG.SettingHandler(),
 ]
 
+const schema_sessions = () => [
+  FRAG.Base(),
+  Group("stash",
+    Switch("STASH_NEW_UNSAVED_FILES"),
+    Switch("STASH_UNSAVED_FILE_CHANGES"),
+    Integer("STASH_SYNC_INTERVAL").Min(1).Step(1),
+  ),
+  Group("appearance",
+    Text("UNTITLED_NAME_PREFIX"),
+  ),
+  Group("hotkeys",
+    Hotkey("NEW_UNTITLED_HOTKEY"),
+  ),
+  Group("development",
+    Switch("DEBUG"),
+  ),
+  FRAG.SettingHandler(),
+]
+
 const schema_search_multi = () => [
   FRAG.Base(true),
   Group("search",
@@ -1551,6 +1570,7 @@ const schema_repository = () => [
 const RAW_SCHEMAS = {
   global: schema_global,
   window_tab: schema_window_tab,
+  sessions: schema_sessions,
   search_multi: schema_search_multi,
   commander: schema_commander,
   md_padding: schema_md_padding,

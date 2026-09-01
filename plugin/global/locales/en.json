@@ -200,6 +200,26 @@
     "$option.TAB_DETACHMENT.resistant": "Resistant Drag",
     "$option.TAB_DETACHMENT.lockVertical": "Lock Vertical Movement"
   },
+  "sessions": {
+    "pluginName": "Sessions",
+    "act.new_untitled": "New Untitled Buffer",
+    "modal.saveChanges": "Save changes to {{name}}?",
+    "modal.saveDetail": "Your changes will be lost if you don't save them.",
+    "modal.save": "Save",
+    "modal.dontSave": "Don't Save",
+    "modal.cancel": "Cancel",
+    "modal.saveDialogTitle": "Save document",
+    "$label.STASH_NEW_UNSAVED_FILES": "Stash New Unsaved Files",
+    "$label.STASH_UNSAVED_FILE_CHANGES": "Stash Unsaved File Changes",
+    "$label.STASH_SYNC_INTERVAL": "Stash Sync Interval (seconds)",
+    "$label.UNTITLED_NAME_PREFIX": "Untitled Tab Name Prefix",
+    "$label.NEW_UNTITLED_HOTKEY": "New Untitled Buffer",
+    "$label.DEBUG": "Verbose Logging",
+    "$title.stash": "Stash",
+    "$title.appearance": "Appearance",
+    "$title.hotkeys": "Hotkeys",
+    "$title.development": "Development"
+  },
   "search_multi": {
     "pluginName": "Multi-Fields File Searcher",
     "grammar": "Syntax Guide",

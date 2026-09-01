@@ -200,6 +200,26 @@
     "$option.TAB_DETACHMENT.resistant": "阻尼分離",
     "$option.TAB_DETACHMENT.lockVertical": "鎖定垂直移動"
   },
+  "sessions": {
+    "pluginName": "工作階段",
+    "act.new_untitled": "新增未命名緩衝區",
+    "modal.saveChanges": "是否儲存對 {{name}} 的變更？",
+    "modal.saveDetail": "如果不儲存，變更將會遺失。",
+    "modal.save": "儲存",
+    "modal.dontSave": "不儲存",
+    "modal.cancel": "取消",
+    "modal.saveDialogTitle": "儲存文件",
+    "$label.STASH_NEW_UNSAVED_FILES": "暫存未命名文件",
+    "$label.STASH_UNSAVED_FILE_CHANGES": "暫存未儲存的檔案修改",
+    "$label.STASH_SYNC_INTERVAL": "暫存同步間隔（秒）",
+    "$label.UNTITLED_NAME_PREFIX": "未命名分頁前綴",
+    "$label.NEW_UNTITLED_HOTKEY": "新增未命名緩衝區",
+    "$label.DEBUG": "詳細日誌",
+    "$title.stash": "暫存",
+    "$title.appearance": "外觀",
+    "$title.hotkeys": "快捷鍵",
+    "$title.development": "開發"
+  },
   "search_multi": {
     "pluginName": "多元檔案搜尋",
     "grammar": "搜尋語法",
