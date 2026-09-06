@@ -304,11 +304,7 @@ class Sessions extends BasePlugin {
 
   /** Repaint the tab bar without reopening anything. */
   _repaint = () => {
-    const tab = this._wt.tab
-    const path = tab.current && tab.current.path
-    if (!path) return
-    const render = tab.hooks && tab.hooks.onRender
-    if (render) render(path)
+    if (this._wt.tab.count) this._wt.tab.refresh()
   }
 
   // ==================== commands ====================
