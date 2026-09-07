@@ -47,6 +47,7 @@ class Sessions extends BasePlugin {
   _activeKey = ""        // path of the current tab, or an untitled:// key
   _wt = null             // window_tab plugin instance
   _restoring = false     // guards hooks while we rebuild the tab bar on startup
+  _ready = false         // true once the session has been restored (or found empty)
 
   _log = (...args) => {
     if (this.config.DEBUG) console.log("[" + this.fixedName + "]", ...args)
@@ -130,6 +131,10 @@ class Sessions extends BasePlugin {
     this._hookAutoStash()
     this._hookFlushOnExit()
     await this._restoreSession()
+    // Restore can take up to two seconds (it waits for Typora to settle on a
+    // document). Anything that wants to drive the plugin - tests, other plugins -
+    // should wait for this flag rather than for allPluginsHadInjected.
+    this._ready = true
   }
 
   // ==================== hooks ====================
@@ -424,8 +429,11 @@ class Sessions extends BasePlugin {
 
     const openedPath = this.utils.getFilePath() || ""
     const session = this._session()
+    // The wait above can outlast the user: if a buffer was already switched in
+    // meanwhile, the key is set and must not be overwritten here.
+    const adopt = () => { if (!this._activeKey) this._activeKey = openedPath }
     if (!session.documents.length) {
-      this._activeKey = openedPath
+      adopt()
       return
     }
 
@@ -454,7 +462,7 @@ class Sessions extends BasePlugin {
       activeIndex = documents.length - 1
     }
     if (!documents.length) {
-      this._activeKey = openedPath
+      adopt()
       return
     }
 
